@@ -28,3 +28,54 @@ Spring Boot와 Kafka를 이용한 비동기 메시징 시스템입니다.
 3. 실행:
    ```bash
    mvn spring-boot:run
+
+
+POST /api/v1/notify
+Content-Type: application/json
+{
+  "type": "email",
+  "to": "user@example.com",
+  "subject": "주문 알림",
+  "template": "order",
+  "variables": {
+    "user": "autumn",
+    "orderId": "A1234",
+    "item": "Keyboard",
+    "qty": 2
+  }
+}
+
+
+
+POST /api/v1/notify
+{
+  "type": "kakao",
+  "to": "01012345678",
+  "template": "alert",
+  "variables": {
+    "user": "autumn",
+    "reqId": "R-88",
+    "message": "배치 완료"
+  }
+}
+
+---
+## 📦 Repository Structure
+src/
+ ├── main/
+ │   ├── java/com/example/kafka_notify/
+ │   │    ├── controller/
+ │   │    ├── service/
+ │   │    ├── producer/
+ │   │    └── consumer/
+ │   └── resources/
+ │        └── application.yml
+ └── test/
+      └── KafkaNotifyTests.java
+
+
+---
+## 🪶 Note
+	•	카카오톡 발송은 실제 API 호출 대신 로그로 동작 (테스트용)
+	•	Amazon SES 연동 시 계정 인증 필요
+	•	향후 Redis 큐나 SQS로 확장 가능
