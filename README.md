@@ -45,7 +45,7 @@ Content-Type: application/json
     "qty": 2
   }
 }
-
+```
 
 
 POST /api/v1/notify
@@ -60,8 +60,10 @@ POST /api/v1/notify
     "message": "배치 완료"
   }
 }
+```
 
 ---
+
 ## 📦 Repository Structure
 ```bash
 src/
@@ -75,7 +77,7 @@ src/
  │        └── application.yml
  └── test/
       └── KafkaNotifyTests.java
-
+```
 
 ---
 ## 🪶 Note
