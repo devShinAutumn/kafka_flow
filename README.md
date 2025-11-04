@@ -32,6 +32,7 @@ Spring Boot와 Kafka를 이용한 비동기 메시징 시스템입니다.
 
 POST /api/v1/notify
 Content-Type: application/json
+```bash
 {
   "type": "email",
   "to": "user@example.com",
@@ -48,6 +49,7 @@ Content-Type: application/json
 
 
 POST /api/v1/notify
+```bash
 {
   "type": "kakao",
   "to": "01012345678",
@@ -61,6 +63,7 @@ POST /api/v1/notify
 
 ---
 ## 📦 Repository Structure
+```bash
 src/
  ├── main/
  │   ├── java/com/example/kafka_notify/
